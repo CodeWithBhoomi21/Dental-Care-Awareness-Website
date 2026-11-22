@@ -51,3 +51,32 @@ button {
 button:hover {
     background: #034f6f;
 }
+.slide img {
+    width: 80%;
+    max-width: 450px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 15px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+form input,
+form select,
+form textarea {
+    padding: 12px;
+    border: 1px solid #087eaf;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+form button {
+    padding: 12px;
+}
