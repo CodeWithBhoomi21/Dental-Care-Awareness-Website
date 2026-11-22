@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Appointment - Dental Care</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header>
+    <h1>Book Your Appointment</h1>
+    <p>Your Smile, Our Priority!</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="hygiene.html">Oral Hygiene</a>
+    <a href="procedures.html">Dental Procedures</a>
+    <a href="tips.html">Care Tips</a>
+    <a href="appointment.html">Appointment</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Appointment Enquiry Form</h2>
+
+        <form id="appointmentForm">
+
+            <input type="text" id="name"
+            placeholder="Patient Name" required>
+
+            <input type="tel" id="mobile"
+            placeholder="10 Digit Mobile Number"
+            pattern="[0-9]{10}" required>
+
+            <input type="email" id="email"
+            placeholder="Email Address" required>
+
+            <label>Select Appointment Date</label>
+            <input type="date" id="date" required>
+
+            <label>Select Appointment Time</label>
+            <input type="time" id="time" required>
+
+            <select id="service" required>
+                <option value="">Select Dental Service</option>
+                <option>Teeth Cleaning</option>
+                <option>Braces</option>
+                <option>Root Canal</option>
+                <option>Tooth Filling</option>
+                <option>General Checkup</option>
+            </select>
+
+            <textarea id="message"
+            placeholder="Your Message"></textarea>
+
+            <button type="submit">
+                Send Appointment Enquiry
+            </button>
+
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>Dental Care Awareness | Thank You!</p>
+</footer>
+
+<script>
+document.getElementById("date").min =
+new Date().toISOString().split("T")[0];
+
+document.getElementById("appointmentForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let mobile = document.getElementById("mobile").value;
+    let email = document.getElementById("email").value;
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value;
+    let service = document.getElementById("service").value;
+    let message = document.getElementById("message").value;
+
+    let whatsappMessage =
+    "Dental Appointment Enquiry\n\n" +
+    "Name: " + name + "\n" +
+    "Mobile: " + mobile + "\n" +
+    "Email: " + email + "\n" +
+    "Date: " + date + "\n" +
+    "Time: " + time + "\n" +
+    "Service: " + service + "\n" +
+    "Message: " + message;
+
+    let whatsappURL =
+    "https://wa.me/919827584196?text=" +
+    encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+});
+</script>
+
+</body>
+</html>
