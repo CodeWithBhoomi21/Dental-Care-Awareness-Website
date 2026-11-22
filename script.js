@@ -1,46 +1,36 @@
-let currentSlide = 0;
-
-const slides = document.querySelectorAll(".slide");
-
-function showSlide(index) {
-    slides.forEach(slide => {
-        slide.classList.remove("active");
-    });
-
-    slides[index].classList.add("active");
-}
-
-function nextSlide() {
-    currentSlide++;
-
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
-    }
-
-    showSlide(currentSlide);
-}
-
-function previousSlide() {
-    currentSlide--;
-
-    if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-    }
-
-    showSlide(currentSlide);
-}
-document.getElementById("appointmentForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    alert("Your appointment request has been submitted successfully!");
-
-    this.reset();
-});
 document.getElementById("appointmentForm")
 .addEventListener("submit", function(event) {
+
     event.preventDefault();
 
-    alert("Thank you! Your appointment form has been submitted.");
+    const name = this.querySelector('input[type="text"]').value;
+    const mobile = this.querySelector('input[type="tel"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const date = this.querySelector('input[type="date"]').value;
+    const time = this.querySelector('input[type="time"]').value;
+    const service = this.querySelector('select').value;
+    const message = this.querySelector('textarea').value;
 
-    this.reset();
+    const whatsappMessage = `
+🦷 NEW DENTAL APPOINTMENT
+
+Patient Name: ${name}
+Mobile: ${mobile}
+Email: ${email}
+Date: ${date}
+Time: ${time}
+Service: ${service}
+Message: ${message}
+
+Thank you for choosing Dental Care!
+`;
+
+    const phoneNumber = "9827584196";
+
+    const whatsappURL =
+    "https://wa.me/" + phoneNumber +
+    "?text=" + encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+
 });
