@@ -1,1 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
+<dentalCare>
+
+    <title>Dental Care Awareness</title>
+
+    <services>
+        <service>
+            <name>Teeth Cleaning</name>
+            <description>Removes plaque and tartar from teeth.</description>
+        </service>
+
+        <service>
+            <name>Root Canal</name>
+            <description>Treats infection inside the tooth.</description>
+        </service>
+
+        <service>
+            <name>Dental Braces</name>
+            <description>Helps align crooked teeth.</description>
+        </service>
+
+        <service>
+            <name>Tooth Filling</name>
+            <description>Repairs cavities in teeth.</description>
+        </service>
+
+        <service>
+            <name>General Checkup</name>
+            <description>Checks teeth and gum health.</description>
+        </service>
+    </services>
+
+    <oralHygiene>
+        <tip>Brush twice daily.</tip>
+        <tip>Floss regularly.</tip>
+        <tip>Clean your tongue.</tip>
+        <tip>Visit your dentist regularly.</tip>
+    </oralHygiene>
+
+</dentalCare>
