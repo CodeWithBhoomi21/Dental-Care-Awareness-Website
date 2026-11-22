@@ -1,16 +1,31 @@
-function showMessage() {
-    alert("Welcome to Dental Care Awareness Website! Keep your smile healthy.");
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index) {
+    slides.forEach(slide => {
+        slide.classList.remove("active");
+    });
+
+    slides[index].classList.add("active");
 }
-document.getElementById("appointmentForm")
-.addEventListener("submit", function(event) {
 
-    event.preventDefault();
+function nextSlide() {
+    currentSlide++;
 
-    let name = document.getElementById("name").value;
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    }
 
-    alert("Thank you " + name +
-    "! Your enquiry has been submitted successfully.");
+    showSlide(currentSlide);
+}
 
-    this.reset();
+function previousSlide() {
+    currentSlide--;
 
-});
+    if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+}
