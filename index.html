@@ -13,81 +13,102 @@
 
 <div class="slider">
 
+    <!-- SLIDE 1 -->
     <section class="slide active">
-    <h2>Welcome to Dental Care</h2>
-        <img src="https://placehold.co/700x350.png?text=Dental+Care" alt="Dental Care">
-    <p>Learn how to keep your teeth clean and healthy.</p>
-</section>
+        <h2>Welcome to Dental Care</h2>
+        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=900">
+        <p>Learn how to keep your teeth clean and healthy.</p>
+    </section>
 
+    <!-- SLIDE 2 -->
     <section class="slide">
         <h2>Oral Hygiene</h2>
-        <img src="dental-2.png" alt="Oral Hygiene">
+        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=900">
         <p>Brush twice daily, floss regularly and clean your tongue.</p>
     </section>
 
+    <!-- SLIDE 3 -->
     <section class="slide">
         <h2>Dental Procedures</h2>
-        <img src="dental-3.png" alt="Dental Procedures">
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900">
         <p>Learn about teeth cleaning, filling, braces and root canal.</p>
     </section>
 
+    <!-- SLIDE 4 -->
     <section class="slide">
         <h2>Dental Care Tips</h2>
-        <img src="dental-4.png" alt="Dental Care Tips">
+        <img src="https://images.unsplash.com/photo-1606811971606-6d7c6c7f5b9e?w=900">
         <p>Eat healthy food, avoid excess sugar and visit your dentist regularly.</p>
     </section>
 
+    <!-- SLIDE 5 -->
     <section class="slide">
-        <h2>Contact & FAQ</h2>
-        <p>Ask questions and learn more about dental health.</p>
+        <h2>Book Your Appointment</h2>
+        <p>Take care of your smile. Book your dental appointment today!</p>
+
+        <form id="appointmentForm">
+
+            <input type="text" placeholder="Patient Name" required>
+
+            <input type="tel" placeholder="Mobile Number"
+                   pattern="[0-9]{10}" required>
+
+            <input type="email" placeholder="Email Address" required>
+
+            <input type="date" required>
+
+            <input type="time" required>
+
+            <select required>
+                <option value="">Select Dental Service</option>
+                <option>Teeth Cleaning</option>
+                <option>Braces</option>
+                <option>Root Canal</option>
+                <option>Tooth Filling</option>
+                <option>General Checkup</option>
+            </select>
+
+            <textarea placeholder="Your Message"></textarea>
+
+            <button type="submit">Book Appointment</button>
+
+        </form>
     </section>
-<section class="Slide">
-    <h2>Book Your Appointment</h2>
-    <p>Take the first step towards a healthy smile!</p>
 
-    <form class="appointmentForm">
-
-        <input type="text"
-               placeholder="Your Full Name"
-               required>
-
-        <input type="email"
-               placeholder="Your Email Address"
-               required>
-
-        <input type="tel"
-               placeholder="Mobile Number"
-               pattern="[0-9]{10}"
-               required>
-
-        <select required>
-            <option value="">Select Treatment</option>
-            <option>Teeth Cleaning</option>
-            <option>Braces</option>
-            <option>Root Canal</option>
-            <option>Teeth Whitening</option>
-            <option>Dental Checkup</option>
-        </select>
-
-        <label>Appointment Date</label>
-        <input type="date" required>
-
-        <label>Appointment Time</label>
-        <input type="time" required>
-
-        <textarea placeholder="Your Message"></textarea>
-
-        <button type="submit">Book Appointment</button>
-
-    </form>
-</section>
 </div>
 
-<div class="buttons">
-    <button onclick="previousSlide()">Previous</button>
-    <button onclick="nextSlide()">Next</button>
+<div class="navigation">
+    <button onclick="changeSlide(-1)">Previous</button>
+    <button onclick="changeSlide(1)">Next</button>
 </div>
 
-<script src="script.js"></script>
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+
+function changeSlide(direction) {
+    slides[currentSlide].classList.remove("active");
+
+    currentSlide += direction;
+
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    }
+
+    if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+    }
+
+    slides[currentSlide].classList.add("active");
+}
+
+document.getElementById("appointmentForm")
+.addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Your appointment request has been submitted!");
+    this.reset();
+});
+</script>
+
 </body>
 </html>
