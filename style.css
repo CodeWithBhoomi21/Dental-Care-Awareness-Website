@@ -7,9 +7,11 @@
 body {
     font-family: Arial, sans-serif;
     background: #eaf8fa;
+    color: #333;
     text-align: center;
 }
 
+/* Header */
 header {
     background: #008b9b;
     color: white;
@@ -18,8 +20,27 @@ header {
 
 header h1 {
     margin-bottom: 10px;
+    font-size: 32px;
 }
 
+/* Navigation */
+nav {
+    background: #006b78;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 12px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #a8f5ff;
+}
+
+/* Slider */
 .slider {
     width: 85%;
     max-width: 800px;
@@ -55,8 +76,8 @@ header h1 {
     font-size: 17px;
 }
 
-.navigation button,
-form button {
+/* Buttons */
+button {
     background: #008b9b;
     color: white;
     border: none;
@@ -70,6 +91,7 @@ button:hover {
     background: #005f6b;
 }
 
+/* Forms */
 form {
     max-width: 500px;
     margin: 20px auto;
@@ -95,6 +117,35 @@ form button {
     font-size: 16px;
 }
 
+/* Content Sections */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #ccc;
+}
+
+.card h2 {
+    color: #008b9b;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background: #006b78;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Mobile Responsive */
 @media(max-width:600px) {
     .slider {
         width: 95%;
@@ -102,5 +153,14 @@ form button {
 
     .slide img {
         height: 220px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    header h1 {
+        font-size: 25px;
     }
 }
