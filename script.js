@@ -29,3 +29,10 @@ function previousSlide() {
 
     showSlide(currentSlide);
 }
+document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    alert("Your appointment request has been submitted successfully!");
+
+    this.reset();
+});
