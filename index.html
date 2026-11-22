@@ -83,32 +83,43 @@
 </div>
 
 <script>
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
-
-function changeSlide(direction) {
-    slides[currentSlide].classList.remove("active");
-
-    currentSlide += direction;
-
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
-    }
-
-    if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-    }
-
-    slides[currentSlide].classList.add("active");
-}
-
 document.getElementById("appointmentForm")
 .addEventListener("submit", function(event) {
+
     event.preventDefault();
-    alert("Your appointment request has been submitted!");
-    this.reset();
+
+    const form = this;
+
+    const name = form.querySelector('input[type="text"]').value;
+    const mobile = form.querySelector('input[type="tel"]').value;
+    const email = form.querySelector('input[type="email"]').value;
+    const date = form.querySelector('input[type="date"]').value;
+    const time = form.querySelector('input[type="time"]').value;
+    const service = form.querySelector('select').value;
+    const message = form.querySelector('textarea').value;
+
+    const whatsappMessage =
+`🦷 NEW DENTAL APPOINTMENT
+
+Patient Name: ${name}
+Mobile: ${mobile}
+Email: ${email}
+Date: ${date}
+Time: ${time}
+Service: ${service}
+Message: ${message}`;
+
+    const phoneNumber = "919827584196";
+
+    const whatsappURL =
+    "https://wa.me/" + phoneNumber +
+    "?text=" + encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+
+    alert("Please send your appointment message on WhatsApp.");
+
 });
 </script>
-
 </body>
 </html>
