@@ -36,3 +36,11 @@ document.getElementById("appointmentForm").addEventListener("submit", function(e
 
     this.reset();
 });
+document.getElementById("appointmentForm")
+.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    alert("Thank you! Your appointment form has been submitted.");
+
+    this.reset();
+});
