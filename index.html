@@ -106,34 +106,6 @@
     <button onclick="changeSlide(-1)">Previous</button>
     <button onclick="changeSlide(1)">Next</button>
 </div>
-
-<script>
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
-
-function changeSlide(direction) {
-    slides[currentSlide].classList.remove("active");
-
-    currentSlide += direction;
-
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
-    }
-
-    if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-    }
-
-    slides[currentSlide].classList.add("active");
-}
-
-document.getElementById("appointmentForm")
-.addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Your appointment request has been submitted!");
-    this.reset();
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
