@@ -37,7 +37,7 @@
     <!-- SLIDE 4 -->
     <section class="slide">
         <h2>Dental Care Tips</h2>
-        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=900">
+        <img src="https://images.unsplash.com/photo-1606811971606-6d7c6c7f5b9e?w=900">
         <p>Eat healthy food, avoid excess sugar and visit your dentist regularly.</p>
     </section>
 
@@ -84,14 +84,12 @@
 
 <script>
 let currentSlide = 0;
-
 const slides = document.querySelectorAll(".slide");
 
 function changeSlide(direction) {
-
     slides[currentSlide].classList.remove("active");
 
-    currentSlide = currentSlide + direction;
+    currentSlide += direction;
 
     if (currentSlide >= slides.length) {
         currentSlide = 0;
@@ -103,8 +101,14 @@ function changeSlide(direction) {
 
     slides[currentSlide].classList.add("active");
 }
+
+document.getElementById("appointmentForm")
+.addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Your appointment request has been submitted!");
+    this.reset();
+});
 </script>
 
-<script src="script.js"></script>
 </body>
 </html>
