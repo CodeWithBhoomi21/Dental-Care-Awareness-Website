@@ -1,45 +1,64 @@
-document.addEventListener("DOMContentLoaded", function () {
+// IMAGE SLIDER
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
 
-    const form = document.getElementById("appointmentForm");
+function changeSlide(direction) {
+    if (slides.length === 0) return;
 
-    if (!form) {
-        console.log("Appointment form not found!");
-        return;
+    slides[currentSlide].classList.remove("active");
+
+    currentSlide += direction;
+
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
     }
 
-    form.addEventListener("submit", function (event) {
+    if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+    }
 
+    slides[currentSlide].classList.add("active");
+}
+
+// APPOINTMENT FORM
+const appointmentForm =
+document.getElementById("appointmentForm");
+
+if (appointmentForm &&
+    document.getElementById("name") &&
+    document.getElementById("mobile")) {
+
+    const dateInput = document.getElementById("date");
+
+    if (dateInput) {
+        dateInput.min = new Date().toISOString().split("T")[0];
+    }
+
+    appointmentForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
-        const name = form.querySelector('input[type="text"]').value;
-        const mobile = form.querySelector('input[type="tel"]').value;
-        const email = form.querySelector('input[type="email"]').value;
-        const date = form.querySelector('input[type="date"]').value;
-        const time = form.querySelector('input[type="time"]').value;
-        const service = form.querySelector('select').value;
-        const message = form.querySelector('textarea').value;
+        const name = document.getElementById("name").value;
+        const mobile = document.getElementById("mobile").value;
+        const email = document.getElementById("email").value;
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        const service = document.getElementById("service").value;
+        const message = document.getElementById("message").value;
 
         const whatsappMessage =
-`🦷 NEW DENTAL APPOINTMENT
-
-Patient Name: ${name}
-Mobile Number: ${mobile}
-Email: ${email}
-Date: ${date}
-Time: ${time}
-Service: ${service}
-Message: ${message}
-
-Thank you for choosing Dental Care!`;
-
-        const phoneNumber = "919827584196";
+            "Dental Appointment Enquiry\n\n" +
+            "Name: " + name + "\n" +
+            "Mobile: " + mobile + "\n" +
+            "Email: " + email + "\n" +
+            "Date: " + date + "\n" +
+            "Time: " + time + "\n" +
+            "Service: " + service + "\n" +
+            "Message: " + message;
 
         const whatsappURL =
-            "https://wa.me/" + phoneNumber +
-            "?text=" + encodeURIComponent(whatsappMessage);
+            "https://wa.me/919827584196?text=" +
+            encodeURIComponent(whatsappMessage);
 
-        window.location.href = whatsappURL;
-
+        window.open(whatsappURL, "_blank");
     });
-
-});
+}
