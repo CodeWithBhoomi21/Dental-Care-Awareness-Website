@@ -64,41 +64,6 @@
 <footer>
     <p>Dental Care Awareness | Thank You!</p>
 </footer>
-
-<script>
-document.getElementById("date").min =
-new Date().toISOString().split("T")[0];
-
-document.getElementById("appointmentForm")
-.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    let name = document.getElementById("name").value;
-    let mobile = document.getElementById("mobile").value;
-    let email = document.getElementById("email").value;
-    let date = document.getElementById("date").value;
-    let time = document.getElementById("time").value;
-    let service = document.getElementById("service").value;
-    let message = document.getElementById("message").value;
-
-    let whatsappMessage =
-    "Dental Appointment Enquiry\n\n" +
-    "Name: " + name + "\n" +
-    "Mobile: " + mobile + "\n" +
-    "Email: " + email + "\n" +
-    "Date: " + date + "\n" +
-    "Time: " + time + "\n" +
-    "Service: " + service + "\n" +
-    "Message: " + message;
-
-    let whatsappURL =
-    "https://wa.me/919827584196?text=" +
-    encodeURIComponent(whatsappMessage);
-
-    window.open(whatsappURL, "_blank");
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
