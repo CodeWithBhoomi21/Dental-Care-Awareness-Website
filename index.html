@@ -1,249 +1,50 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Dental care awareness</title>
-        <link rel="stylesheet" href="style1.css">   
-    </head>
-    <body>
-        <header>
-            <h1> Dental care awareness</h1>
-            <p>Your smile, our Priority! </p>
-        </header>
-        <nav>
-            <a href="#home"></a>
-                <a href="#hygiene">Oral Hygiene</a>
-                <a href="#procedures">Procedures </a>
-                <a href="#tips">Care Tips</a>
-                <a href="#problems">Dental Problems</a>
-                <a href="#appointment">Appointment</a> 
-                <a href="#faq">FAQ</a> 
-                <a href="#gallery">Gallery</a>
-        </nav>
-        <section id="home">
-            <h2>Welcome to Dental care</h2>
-            <p>A healthy Smile starts with proper dental care.
-                Learn how to keep your teeth clean and healthy.
-            </p>
-            <button onclick="showMessage()">
-                Learn More
-            </button>
-              </section>
-              <section id="hygiene">
-    <h2>Oral Hygiene</h2>
-    <p>Follow these simple habits for healthy teeth.</p>
+<head>
+    <title>Dental Care Awareness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <div class="container">
+<header>
+    <h1>Dental Care Awareness</h1>
+    <p>Your Smile, Our Priority!</p>
+</header>
 
-        <div class="card">
-            <h3>🪥 Brushing</h3>
-            <p>Brush your teeth twice daily
-            using fluoride toothpaste.</p>
-        </div>
+<div class="slider">
 
-        <div class="card">
-            <h3>😁 Flossing</h3>
-            <p>Clean between your teeth
-            regularly using dental floss.</p>
-        </div>
+    <section class="slide active">
+        <h2>Welcome to Dental Care</h2>
+        <p>Learn how to keep your teeth clean and healthy.</p>
+    </section>
 
-        <div class="card">
-            <h3>👅 Tongue Cleaning</h3>
-            <p>Clean your tongue daily
-            to maintain oral hygiene.</p>
-        </div>
+    <section class="slide">
+        <h2>Oral Hygiene</h2>
+        <p>Brush twice daily, floss regularly and clean your tongue.</p>
+    </section>
 
-        <div class="card">
-            <h3>💧 Rinsing</h3>
-            <p>Rinse your mouth with water
-            after meals.</p>
-        </div>
+    <section class="slide">
+        <h2>Dental Procedures</h2>
+        <p>Learn about teeth cleaning, filling, braces and root canal.</p>
+    </section>
 
-    </div>
-</section>
-              <section id="procedures">
-    <h2>Dental Procedures</h2>
-    <p>Learn about common dental treatments.</p>
+    <section class="slide">
+        <h2>Dental Care Tips</h2>
+        <p>Eat healthy food, avoid excess sugar and visit your dentist regularly.</p>
+    </section>
 
-    <div class="container">
+    <section class="slide">
+        <h2>Contact & FAQ</h2>
+        <p>Ask questions and learn more about dental health.</p>
+    </section>
 
-        <div class="card">
-            <h3>🦷 Teeth Cleaning</h3>
-            <p>Removes plaque and tartar
-            to maintain healthy teeth.</p>
-        </div>
+</div>
 
-        <div class="card">
-            <h3>✨ Tooth Filling</h3>
-            <p>Repairs teeth damaged
-            by cavities.</p>
-        </div>
+<div class="buttons">
+    <button onclick="previousSlide()">Previous</button>
+    <button onclick="nextSlide()">Next</button>
+</div>
 
-        <div class="card">
-            <h3>😁 Braces</h3>
-            <p>Helps straighten teeth
-            and improve alignment.</p>
-        </div>
-
-        <div class="card">
-            <h3>🩺 Root Canal</h3>
-            <p>Treats infection inside
-            a damaged tooth.</p>
-        </div>
-
-    </div>
-</section>
-              <section id="tips">
-    <h2>Dental Care Tips</h2>
-    <p>Follow these tips for a healthy smile.</p>
-
-    <div class="container">
-
-        <div class="card">
-            <h3>🪥 Brush Twice</h3>
-            <p>Brush your teeth two times
-            every day.</p>
-        </div>
-
-        <div class="card">
-            <h3>🍎 Eat Healthy</h3>
-            <p>Eat fruits and vegetables
-            for better oral health.</p>
-        </div>
-
-        <div class="card">
-            <h3>🚫 Avoid Sugar</h3>
-            <p>Limit sugary foods and drinks
-            to protect your teeth.</p>
-        </div>
-
-        <div class="card">
-            <h3>👩‍⚕️ Visit Dentist</h3>
-            <p>Visit your dentist regularly
-            for checkups.</p>
-        </div>
-
-    </div>
-</section>
-<section id="problems">
-    <h2>Common Dental Problems</h2>
-
-    <div class="container">
-
-        <div class="card">
-            <h3>🦷 Tooth Decay</h3>
-            <p>Damage to teeth caused
-            by bacteria and acids.</p>
-        </div>
-
-        <div class="card">
-            <h3>😁 Cavities</h3>
-            <p>Small holes that develop
-            in the teeth.</p>
-        </div>
-
-        <div class="card">
-            <h3>🩺 Gum Disease</h3>
-            <p>Infection or inflammation
-            of the gums.</p>
-        </div>
-
-        <div class="card">
-            <h3>❄️ Sensitivity</h3>
-            <p>Pain or discomfort when
-            consuming hot or cold food.</p>
-        </div>
-
-    </div>
-</section>
-              <section id="appointment">
-    <h2>Book a Dental Appointment</h2>
-    <p>Fill in the form to send your appointment enquiry.</p>
-
-    <form id="appointmentForm">
-
-        <label>Full Name:</label>
-        <input type="text" id="name"
-        placeholder="Enter your name" required>
-
-        <label>Email Address:</label>
-        <input type="email" id="email"
-        placeholder="Enter your email" required>
-
-        <label>Phone Number:</label>
-        <input type="tel" id="phone"
-        placeholder="Enter your phone number"
-        pattern="[0-9]{10}" required>
-
-        <label>Appointment Date:</label>
-        <input type="date" id="date" required>
-
-        <label>Dental Problem:</label>
-        <select id="problem" required>
-            <option value="">Select Problem</option>
-            <option>Tooth Pain</option>
-            <option>Tooth Cleaning</option>
-            <option>Braces</option>
-            <option>Gum Problem</option>
-            <option>Other</option>
-        </select>
-
-        <button type="submit">Submit Enquiry</button>
-
-    </form>
-</section>
-<section id="faq">
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="card">
-        <h3>1. How many times should I brush?</h3>
-        <p>You should brush twice daily.</p>
-    </div>
-
-    <div class="card">
-        <h3>2. Why is dental hygiene important?</h3>
-        <p>It helps prevent cavities and gum diseases.</p>
-    </div>
-
-    <div class="card">
-        <h3>3. How often should I visit a dentist?</h3>
-        <p>Regular dental checkups are important.</p>
-    </div>
-
-    <div class="card">
-        <h3>4. What causes tooth decay?</h3>
-        <p>Bacteria and acids can damage tooth enamel.</p>
-    </div>
-
-</section>
-<section id="gallery">
-    <h2>Dental Care Gallery</h2>
-    <p>Explore the importance of a healthy smile.</p>
-
-    <div class="gallery">
-
-        <div class="gallery-card">
-            <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=500"
-            alt="Dental Care">
-            <h3>Dental Care</h3>
-        </div>
-
-        <div class="gallery-card">
-            <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500"
-            alt="Healthy Teeth">
-            <h3>Healthy Teeth</h3>
-        </div>
-
-        <div class="gallery-card">
-            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500"
-            alt="Dental Clinic">
-            <h3>Dental Clinic</h3>
-        </div>
-
-    </div>
-</section>
-              <footer>
-                <p>2026 Dental Care awareness Wedsite</p>
-              </footer>
-              <script src="script1.js"></script>
-    </body>
+<script src="script.js"></script>
+</body>
 </html>
