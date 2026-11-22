@@ -75,3 +75,18 @@ function toggleTheme() {
         button.innerText = "🌙 Dark Mode";
     }
 }
+// DYNAMIC WELCOME MESSAGE
+
+const welcome = document.getElementById("welcomeMessage");
+
+if (welcome) {
+    let hour = new Date().getHours();
+
+    if (hour < 12) {
+        welcome.innerText = "Good Morning! Keep Smiling!";
+    } else if (hour < 17) {
+        welcome.innerText = "Good Afternoon! Care for Your Teeth!";
+    } else {
+        welcome.innerText = "Good Evening! Keep Your Smile Healthy!";
+    }
+}
