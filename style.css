@@ -164,3 +164,23 @@ footer {
         font-size: 25px;
     }
 }
+/* DARK MODE */
+
+body.dark-mode {
+    background: #17252a;
+    color: white;
+}
+
+body.dark-mode .card,
+body.dark-mode .slider {
+    background: #263b42;
+    color: white;
+}
+
+body.dark-mode .card h2 {
+    color: #65dce8;
+}
+
+body.dark-mode footer {
+    background: #102a32;
+}
